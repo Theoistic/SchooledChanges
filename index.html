@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Understanding Changes</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    const data = {
+      "1970": { "title": "Fixed Continents", "details": "Continents were thought to be static and unchanging. Plate tectonics, explaining continental drift, became widely accepted in the early 1970s." },
+      "1971": { "title": "Central Dogma of Molecular Biology", "details": "The central dogma was believed to be unidirectional (DNA -> RNA -> Protein). Later discoveries revealed reverse transcription (RNA -> DNA) in retroviruses." },
+      "1972": { "title": "Humans Solely Responsible for Tools", "details": "It was believed that only humans used tools. Research in the 1960s and 1970s showed that primates and other animals also use tools." },
+      "1973": { "title": "Linear Evolution", "details": "Evolution was often taught as a linear progression. Today, it is understood as a branching process with many dead ends and no predetermined direction." },
+      "1974": { "title": "Dinosaurs as Slow-Moving", "details": "Dinosaurs were depicted as slow-moving and sluggish. Modern evidence suggests that many dinosaurs were active and possibly warm-blooded." },
+      "1975": { "title": "Behaviorism Dominance", "details": "Behaviorism, the idea that all behaviors are learned through interaction with the environment, dominated psychology. Cognitive psychology has since shown the importance of mental processes." },
+      "1976": { "title": "Global Cooling", "details": "Some scientists predicted a global cooling trend. By the late 1980s, the consensus shifted to global warming and human-induced climate change." },
+      "1977": { "title": "No Plate Tectonics on Other Planets", "details": "It was believed that only Earth had plate tectonics. Evidence now suggests that other planets and moons, like Mars and Europa, may have tectonic activity." },
+      "1978": { "title": "Vitamin C Prevents Colds", "details": "Vitamin C was believed to prevent the common cold. Research shows it has little to no effect on prevention, though it may reduce duration slightly." },
+      "1979": { "title": "Geocentric Universe", "details": "Ancient models placed Earth at the center of the universe. This view was replaced by the heliocentric model and further refined to the current understanding of the universe." },
+      "1980": { "title": "Brontosaurus as a Dinosaur", "details": "Brontosaurus was considered a valid dinosaur genus. In the 1980s, it was reclassified as Apatosaurus, but recent studies have resurrected Brontosaurus as distinct." },
+      "1981": { "title": "Memory as a Video Recorder", "details": "Memory was thought to function like a video recorder. Modern research shows that memory is reconstructive and prone to distortion." },
+      "1982": { "title": "No Deep Sea Life", "details": "It was believed that life couldn't exist in the deep sea due to high pressure and lack of light. Discoveries of hydrothermal vent ecosystems proved otherwise." },
+      "1983": { "title": "Cold-Blooded Dinosaurs", "details": "Dinosaurs were thought to be cold-blooded. Current evidence suggests that many dinosaurs were warm-blooded or had varying metabolic rates." },
+      "1984": { "title": "Left Brain vs. Right Brain", "details": "The idea that people are either left-brained (logical) or right-brained (creative) was popular. Modern neuroscience shows that both hemispheres are involved in most cognitive functions." },
+      "1985": { "title": "Fat-Free Diets for Health", "details": "Fat-free diets were heavily promoted for health and weight loss. We now understand that healthy fats are essential and that balanced diets are more effective." },
+      "1986": { "title": "Ozone Layer Depletion Awareness", "details": "The depletion of the ozone layer by CFCs was widely recognized, leading to the Montreal Protocol to phase out CFCs." },
+      "1987": { "title": "Humans as Only Intelligent Life", "details": "It was widely believed that humans were the only intelligent life. The search for extraterrestrial intelligence (SETI) continues, with no definitive findings yet." },
+      "1988": { "title": "Neanderthals as Our Ancestors", "details": "Neanderthals were often depicted as direct ancestors of modern humans. We now know that they were a separate species, though they did interbreed with early humans." },
+      "1989": { "title": "Ulcers Caused by Stress", "details": "It was commonly believed that stress was the main cause of stomach ulcers. We now know that most ulcers are caused by the bacterium Helicobacter pylori and can be treated with antibiotics." },
+      "1990": { "title": "Humans and Neanderthals Did Not Interbreed", "details": "It was believed that humans and Neanderthals did not interbreed. Genetic evidence now shows that they did, and many humans have Neanderthal DNA." },
+      "1991": { "title": "Low-Fat Diets for Weight Loss", "details": "Low-fat diets were heavily promoted for weight loss and overall health. Current research emphasizes the importance of healthy fats and suggests that low-carb diets can also be effective for weight loss." },
+      "1992": { "title": "No Water on Mars", "details": "It was believed that Mars was a dry planet. Recent discoveries have shown evidence of water ice and seasonal liquid water flows on Mars." },
+      "1993": { "title": "Dinosaurs Were Cold-Blooded", "details": "Dinosaurs were thought to be cold-blooded. Current evidence suggests that many dinosaurs were warm-blooded or had varying metabolic rates." },
+      "1994": { "title": "Memory as a Static Record", "details": "Memory was often thought to be a static record of events. We now know that memory is dynamic and can be influenced by new experiences and information." },
+      "1995": { "title": "Antibiotics for All Infections", "details": "Antibiotics were frequently prescribed for various infections, including viral ones. Today, we understand that antibiotics are ineffective against viruses and overuse can lead to antibiotic resistance." },
+      "1996": { "title": "Dietary Cholesterol and Heart Disease", "details": "It was widely believed that dietary cholesterol directly contributed to heart disease. Current research shows that saturated and trans fats have a greater impact on blood cholesterol levels." },
+      "1997": { "title": "Marsupials Only in Australia", "details": "Marsupials were thought to be primarily native to Australia. However, we now know that there are several species of marsupials in the Americas as well." },
+      "1998": { "title": "Left Brain vs. Right Brain", "details": "The idea that people are either left-brained (logical) or right-brained (creative) was popular. Modern neuroscience shows that both hemispheres are involved in most cognitive functions." },
+      "1999": { "title": "Use 10% of Brain Capacity", "details": "The myth that humans only use 10% of their brain was still prevalent. We now know that nearly all parts of the brain have known functions and are active at different times." },
+      "2000": { "title": "Nine Planets in the Solar System", "details": "Pluto was still classified as the ninth planet. In 2006, Pluto was reclassified as a 'dwarf planet' by the International Astronomical Union." },
+      "2001": { "title": "Genes Are Destiny", "details": "Genetic determinism suggested that genes alone determined traits. The field of epigenetics has shown that environmental factors also play a significant role in gene expression." },
+      "2002": { "title": "Mars Lacks Water", "details": "Mars was believed to be a dry planet. Recent discoveries have shown evidence of water ice and seasonal liquid water flows on Mars." },
+      "2003": { "title": "No Microbial Life in Extreme Environments", "details": "Extreme environments, such as deep-sea vents, were considered inhospitable for life. Discoveries of extremophiles have shown that life can thrive in such conditions." },
+      "2004": { "title": "Vitamin C Prevents Colds", "details": "Vitamin C was believed to prevent the common cold. Research shows it has little to no effect on prevention, though it may reduce duration slightly." },
+      "2005": { "title": "Pluto as a Planet", "details": "In 2005, Pluto was still considered the ninth planet in our solar system. However, in 2006, the International Astronomical Union reclassified Pluto as a 'dwarf planet.'" },
+      "2006": { "title": "Humans as Only Intelligent Life", "details": "It was widely believed that humans were the only intelligent life. The search for extraterrestrial intelligence (SETI) continues, with no definitive findings yet." },
+      "2007": { "title": "Low-Fat Diets for Weight Loss", "details": "Low-fat diets were heavily promoted for weight loss and overall health. Current research emphasizes the importance of healthy fats and suggests that low-carb diets can also be effective for weight loss." },
+      "2008": { "title": "No Deep Sea Life", "details": "It was believed that life couldn't exist in the deep sea due to high pressure and lack of light. Discoveries of hydrothermal vent ecosystems proved otherwise." },
+      "2009": { "title": "Ozone Layer Depletion Reversal", "details": "Efforts to reduce CFC use, such as the Montreal Protocol, have led to the slow recovery of the ozone layer." },
+      "2010": { "title": "Antibiotics for All Infections", "details": "Antibiotics were commonly prescribed for viral infections. It's now understood that antibiotics are ineffective against viruses and overuse can lead to resistance." },
+      "2011": { "title": "Dietary Cholesterol Directly Causes Heart Disease", "details": "Dietary cholesterol was believed to directly cause heart disease. Current research shows that saturated and trans fats have a greater impact on blood cholesterol levels." },
+      "2012": { "title": "Left Brain vs. Right Brain", "details": "People were thought to be either left-brained (logical) or right-brained (creative). Modern neuroscience shows that both hemispheres are involved in most cognitive functions." },
+      "2013": { "title": "Use Only 10% of Brain", "details": "The myth that humans use only 10% of their brain was still prevalent. We now know that nearly all parts of the brain have known functions and are active at different times." },
+      "2014": { "title": "Human Genome Completely Understood", "details": "It was believed that the human genome was fully understood after the Human Genome Project. Ongoing research reveals the complexity of gene regulation and expression." },
+      "2015": { "title": "Memory is Static", "details": "Memory was considered a static and accurate record of events. Research shows that memory is dynamic, reconstructive, and can be influenced by various factors." },
+      "2016": { "title": "Low-Fat Diets for Weight Loss", "details": "Low-fat diets were heavily promoted for weight loss and overall health. Current research emphasizes the importance of healthy fats and suggests that low-carb diets can also be effective for weight loss." },
+      "2017": { "title": "Use Only 10% of Brain", "details": "The myth that humans use only 10% of their brain was still prevalent. We now know that nearly all parts of the brain have known functions and are active at different times." },
+      "2018": { "title": "Deterministic Genetic Traits", "details": "It was believed that genetic traits were fixed and unchangeable. Epigenetics has shown that environmental factors can influence gene expression." },
+      "2019": { "title": "Only Humans Have Complex Emotions", "details": "It was commonly thought that only humans experience complex emotions. Research now shows that many animals exhibit behaviors indicative of complex emotional states." },
+      "2020": { "title": "Mask Wearing Ineffective for Public", "details": "Early in the COVID-19 pandemic, it was believed that mask-wearing was not necessary for the general public. Later studies confirmed that masks are effective in reducing virus transmission." },
+      "2021": { "title": "Herd Immunity Through Infection", "details": "It was believed that achieving herd immunity through widespread infection could end the COVID-19 pandemic. Vaccination is now understood to be a safer and more effective route to achieving herd immunity." },
+      "2022": { "title": "Cryptocurrencies Are a Stable Investment", "details": "Cryptocurrencies were often viewed as a stable investment. Market volatility and regulatory changes have shown that cryptocurrencies are highly speculative." },
+      "2023": { "title": "AI Cannot Write Creatively", "details": "It was believed that artificial intelligence could not perform creative writing tasks. Recent advancements in AI, such as GPT-3 and GPT-4, have demonstrated significant creative writing capabilities." },
+      "2024": { "title": "Electric Vehicles Lack Range", "details": "It was believed that electric vehicles (EVs) lacked sufficient range for practical use. Advances in battery technology have greatly extended the range of EVs, making them more viable for everyday use." }
+    };
+
+    function displayChanges() {
+      const year = document.getElementById("year").value;
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = ""; // Clear previous results
+
+      for (let i = year; i <= 2024; i++) {
+        if (data[i]) {
+          const change = document.createElement("div");
+          change.className = "p-4 my-2 bg-gray-200 rounded";
+          change.innerHTML = `<h3 class="text-xl font-bold">${i}: ${data[i].title}</h3><p>${data[i].details}</p>`;
+          resultDiv.appendChild(change);
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4">Scientific Understanding Changes</h1>
+    <div class="mb-4">
+      <label for="year" class="block text-lg font-medium">Enter the year you completed high school:</label>
+      <input type="number" id="year" class="mt-2 p-2 border rounded w-full" min="1970" max="2024" placeholder="e.g., 1990">
+    </div>
+    <button onclick="displayChanges()" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+    <div id="result" class="mt-6"></div>
+  </div>
+</body>
+</html>
